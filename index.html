@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Правила чтения польского языка</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .teacher-credit {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 0.9em;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .rule-section {
+            margin-bottom: 40px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            border-left: 5px solid #4CAF50;
+        }
+        
+        .rule-section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+        }
+        
+        .rule-section h3 {
+            color: #34495e;
+            margin: 25px 0 15px 0;
+            font-size: 1.4em;
+        }
+        
+        .golden-rule {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            border-left: 5px solid #f39c12;
+            margin-bottom: 40px;
+        }
+        
+        .golden-rule h2 {
+            color: #8b4513;
+        }
+        
+        .key-point {
+            background: #e3f2fd;
+            border: 2px solid #2196F3;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+        
+        .stress-rule {
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            border-left: 5px solid #e91e63;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        
+        tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .phonetic {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        .example {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 10px;
+            margin: 8px 0;
+            font-family: monospace;
+            font-size: 1.1em;
+        }
+        
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .example-card {
+            background: white;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .example-card strong {
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
+        
+        .emoji {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .soft-sound {
+            background: #e8f5e8;
+            border-left: 4px solid #4CAF50;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        
+        .nasal-table td:nth-child(2) {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        
+        .yot-table th {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #8b4513;
+        }
+        
+        .yot-table td:nth-child(3) {
+            font-weight: bold;
+            color: #e74c3c;
+            font-size: 1.2em;
+        }
+        
+        @media (max-width: 768px) {
+            .teacher-credit {
+                position: static;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="teacher-credit">
+                👨‍🏫 Преподаватель: Павел Веренич
+            </div>
+            <h1>🇵🇱 Правила чтения польского языка</h1>
+            <p>Для русскоговорящих студентов</p>
+        </div>
+        
+        <div class="content">
+            <!-- Ударение -->
+            <div class="rule-section stress-rule">
+                <h2><span class="emoji">🎯</span>Основное правило ударения</h2>
+                <div class="key-point">
+                    <strong>УДАРЕНИЕ В ПОЛЬСКОМ ЯЗЫКЕ ВСЕГДА падает на ПРЕДПОСЛЕДНИЙ СЛОГ!</strong>
+                </div>
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <strong>ma</strong>ma → <span class="phonetic">[МА-ма]</span><br>мама
+                    </div>
+                    <div class="example-card">
+                        <strong>ko</strong>bieta → <span class="phonetic">[ко-БЕ-та]</span><br>женщина
+                    </div>
+                    <div class="example-card">
+                        <strong>u</strong>czyć się → <span class="phonetic">[У-чыч ше]</span><br>учиться
+                    </div>
+                    <div class="example-card">
+                        <strong>te</strong>lefon → <span class="phonetic">[тэ-ЛЭ-фон]</span><br>телефон
+                    </div>
+                </div>
+            </div>
+
+            <!-- Простые буквы -->
+            <div class="rule-section">
+                <h2><span class="emoji">📝</span>Буквы, читающиеся как в русском языке</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Польская буква</th>
+                            <th>Произношение</th>
+                            <th>Пример</th>
+                            <th>Транскрипция</th>
+                            <th>Перевод</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>A</strong></td><td>[а]</td><td>mama</td><td class="phonetic">[мама]</td><td>мама</td></tr>
+                        <tr><td><strong>B</strong></td><td>[б]</td><td>brat</td><td class="phonetic">[брат]</td><td>брат</td></tr>
+                        <tr><td><strong>D</strong></td><td>[д]</td><td>dom</td><td class="phonetic">[дом]</td><td>дом</td></tr>
+                        <tr><td><strong>F</strong></td><td>[ф]</td><td>film</td><td class="phonetic">[фильм]</td><td>фильм</td></tr>
+                        <tr><td><strong>G</strong></td><td>[г]</td><td>góra</td><td class="phonetic">[гура]</td><td>гора</td></tr>
+                        <tr><td><strong>H</strong></td><td>[х]</td><td>hotel</td><td class="phonetic">[хотэль]</td><td>отель</td></tr>
+                        <tr><td><strong>K</strong></td><td>[к]</td><td>kot</td><td class="phonetic">[кот]</td><td>кот</td></tr>
+                        <tr><td><strong>M</strong></td><td>[м]</td><td>mleko</td><td class="phonetic">[млеко]</td><td>молоко</td></tr>
+                        <tr><td><strong>N</strong></td><td>[н]</td><td>noc</td><td class="phonetic">[ноц]</td><td>ночь</td></tr>
+                        <tr><td><strong>O</strong></td><td>[о]</td><td>oko</td><td class="phonetic">[око]</td><td>глаз</td></tr>
+                        <tr><td><strong>P</strong></td><td>[п]</td><td>pies</td><td class="phonetic">[пес]</td><td>собака</td></tr>
+                        <tr><td><strong>R</strong></td><td>[р]</td><td>rano</td><td class="phonetic">[рано]</td><td>утром</td></tr>
+                        <tr><td><strong>S</strong></td><td>[с]</td><td>ser</td><td class="phonetic">[сэр]</td><td>сыр</td></tr>
+                        <tr><td><strong>T</strong></td><td>[т]</td><td>tam</td><td class="phonetic">[там]</td><td>там</td></tr>
+                        <tr><td><strong>U</strong></td><td>[у]</td><td>but</td><td class="phonetic">[бут]</td><td>ботинок</td></tr>
+                        <tr><td><strong>V</strong></td><td>[в]</td><td>woda</td><td class="phonetic">[вода]</td><td>вода</td></tr>
+                        <tr><td><strong>W</strong></td><td>[в]</td><td>wino</td><td class="phonetic">[вино]</td><td>вино</td></tr>
+                        <tr><td><strong>Z</strong></td><td>[з]</td><td>zupa</td><td class="phonetic">[зупа]</td><td>суп</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Носовые буквы -->
+            <div class="rule-section">
+                <h2><span class="emoji">👃</span>Носовые буквы Ą и Ę</h2>
+                
+                <h3>Буква Ą (а с хвостиком)</h3>
+                <table class="nasal-table">
+                    <thead>
+                        <tr>
+                            <th>Позиция</th>
+                            <th>Произношение</th>
+                            <th>Примеры</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>В середине слова</strong></td>
+                            <td>[он] / [ом]</td>
+                            <td>mąka <span class="phonetic">[МОН-ка]</span> — мука<br>rąbać <span class="phonetic">[РОN-бач]</span> — рубить</td>
+                        </tr>
+                        <tr>
+                            <td><strong>В конце слова</strong></td>
+                            <td>[о]</td>
+                            <td>idą <span class="phonetic">[И-до]</span> — они идут<br>robią <span class="phonetic">[РО-бё]</span> — они делают<br><em>(после i носовая ą смягчается и звучит как [ё])</em></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Буква Ę (е с хвостиком)</h3>
+                <table class="nasal-table">
+                    <thead>
+                        <tr>
+                            <th>Позиция</th>
+                            <th>Произношение</th>
+                            <th>Примеры</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>В середине слова</strong></td>
+                            <td>[эн] / [эм]</td>
+                            <td>pięć <span class="phonetic">[пенч]</span> — пять<br>męka <span class="phonetic">[МЭН-ка]</span> — мука</td>
+                        </tr>
+                        <tr>
+                            <td><strong>В конце слова</strong></td>
+                            <td>[э]</td>
+                            <td>imię <span class="phonetic">[И-мё]</span> — имя<br><em>(после i носовая ę смягчается и звучит как [ё])</em><br>się <span class="phonetic">[ше]</span> — себя</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Золотое правило -->
+            <div class="rule-section golden-rule">
+                <h2><span class="emoji">🔑</span>ВАЖНОЕ ПРАВИЛО: Буква I — "йотировщик"</h2>
+                <div class="key-point">
+                    <strong>ЗОЛОТОЕ ПРАВИЛО: Буква I перед гласными всегда создает йотированные звуки (как в русском Я, Ё, Ю, Е)</strong>
+                </div>
+
+                <table class="yot-table">
+                    <thead>
+                        <tr>
+                            <th>Польское сочетание</th>
+                            <th>=</th>
+                            <th>Русский звук</th>
+                            <th>Примеры слов</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>IA</strong></td>
+                            <td>→</td>
+                            <td><strong>[Я]</strong></td>
+                            <td><strong>m</strong>IA<strong>sto</strong> <span class="phonetic">[МЯ-сто]</span> — город<br><strong>k</strong>IA<strong>no</strong> <span class="phonetic">[КЯ-но]</span> — пианино<br><strong>h</strong>IA<strong>cint</strong> <span class="phonetic">[ХЯ-цинт]</span> — гиацинт</td>
+                        </tr>
+                        <tr>
+                            <td><strong>IE</strong></td>
+                            <td>→</td>
+                            <td><strong>[Е]</strong></td>
+                            <td><strong>c</strong>IE<strong>le</strong> <span class="phonetic">[ЧЕ-ле]</span> — теленок<br><strong>p</strong>IE<strong>s</strong> <span class="phonetic">[пес]</span> — собака<br><strong>m</strong>IE<strong>so</strong> <span class="phonetic">[МЕ-со]</span> — мясо</td>
+                        </tr>
+                        <tr>
+                            <td><strong>IO</strong></td>
+                            <td>→</td>
+                            <td><strong>[Ё]</strong></td>
+                            <td><strong>stud</strong>IO <span class="phonetic">[сту-ДЁ]</span> — студия<br><strong>rad</strong>IO <span class="phonetic">[РА-дё]</span> — радио<br><strong>reg</strong>ION <span class="phonetic">[РЕ-гён]</span> — регион</td>
+                        </tr>
+                        <tr>
+                            <td><strong>IU</strong></td>
+                            <td>→</td>
+                            <td><strong>[Ю]</strong></td>
+                            <td><strong>stad</strong>IUM <span class="phonetic">[ста-ДЮМ]</span> — стадион<br><strong>aud</strong>ITORIUM <span class="phonetic">[ау-ди-ТО-рюм]</span> — аудитория</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Дополнительные примеры для закрепления</h3>
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <strong>IA = [Я]:</strong><br>
+                        Italia <span class="phonetic">[и-ТА-ля]</span><br>
+                        historia <span class="phonetic">[хи-СТО-ря]</span><br>
+                        familia <span class="phonetic">[фа-МИ-ля]</span><br>
+                        aria <span class="phonetic">[А-ря]</span>
+                    </div>
+                    <div class="example-card">
+                        <strong>IE = [Е]:</strong><br>
+                        ciepło <span class="phonetic">[ЧЕ-пво]</span><br>
+                        wiele <span class="phonetic">[ВЕ-ле]</span><br>
+                        pole <span class="phonetic">[ПО-ле]</span>
+                    </div>
+                    <div class="example-card">
+                        <strong>IO = [Ё]:</strong><br>
+                        million <span class="phonetic">[МИ-льён]</span><br>
+                        region <span class="phonetic">[РЕ-гён]</span><br>
+                        portion <span class="phonetic">[ПОР-цён]</span>
+                    </div>
+                    <div class="example-card">
+                        <strong>IU = [Ю]:</strong><br>
+                        calcium <span class="phonetic">[КАЛЬ-цюм]</span><br>
+                        premium <span class="phonetic">[ПРЕ-мюм]</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Смягчение согласных -->
+            <div class="rule-section">
+                <h2><span class="emoji">💫</span>Смягчение согласных</h2>
+                
+                <h3>Диакритические знаки (черточки и точки)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Буква</th>
+                            <th>Произношение</th>
+                            <th>Пример</th>
+                            <th>Транскрипция</th>
+                            <th>Перевод</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Ć</strong></td><td>мягкое [ч]</td><td>być</td><td class="phonetic">[быч]</td><td>быть</td></tr>
+                        <tr><td><strong>Ń</strong></td><td>мягкое [н']</td><td>koń</td><td class="phonetic">[конь]</td><td>конь</td></tr>
+                        <tr><td><strong>Ś</strong></td><td>мягкое [ш']</td><td>śnieg</td><td class="phonetic">[шьнег]</td><td>снег</td></tr>
+                        <tr><td><strong>Ź</strong></td><td>мягкое [ж']</td><td>źrebak</td><td class="phonetic">[жьрэбак]</td><td>жеребенок</td></tr>
+                        <tr><td><strong>Ż</strong></td><td>твердое [ж]</td><td>żaba</td><td class="phonetic">[ЖАБА]</td><td>лягушка</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>Смягчение через букву I</h3>
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <strong>ci</strong> = [чи]<br>ciastko <span class="phonetic">[ЧАСТ-ко]</span> — печенье
+                    </div>
+                    <div class="example-card">
+                        <strong>ni</strong> = [ни]<br>nie <span class="phonetic">[не]</span> — не, нет
+                    </div>
+                    <div class="example-card">
+                        <strong>si</strong> = [ши]<br>siła <span class="phonetic">[ЩИ-ва]</span> — сила
+                    </div>
+                    <div class="example-card">
+                        <strong>zi</strong> = [жи]<br>zima <span class="phonetic">[ЖИ-ма]</span> — зима
+                    </div>
+                </div>
+            </div>
+
+            <!-- Особые буквы -->
+            <div class="rule-section">
+                <h2><span class="emoji">🎭</span>Особые буквы</h2>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Буква</th>
+                            <th>Произношение</th>
+                            <th>Примеры</th>
+                            <th>Пояснение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Ł</strong> (Л перечеркнутая)</td>
+                            <td>[у] (неслоговое)</td>
+                            <td>łaska <span class="phonetic">[УАСКА]</span><br>koło <span class="phonetic">[КО-ву]</span><br>mały <span class="phonetic">[МА-вы]</span></td>
+                            <td>Как в белорусском языке</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Y</strong></td>
+                            <td>[Ы]</td>
+                            <td>syn <span class="phonetic">[сын]</span><br>być <span class="phonetic">[быч]</span><br>my <span class="phonetic">[мы]</span></td>
+                            <td>Точно как русское Ы</td>
+                        </tr>
+                        <tr>
+                            <td><strong>E</strong></td>
+                            <td>[Э]</td>
+                            <td>sen <span class="phonetic">[сэн]</span><br>ser <span class="phonetic">[сэр]</span></td>
+                            <td>Всегда твердое</td>
+                        </tr>
+                        <tr>
+                            <td><strong>L</strong></td>
+                            <td>[ль]</td>
+                            <td>lato <span class="phonetic">[ЛЯ-то]</span><br>mleko <span class="phonetic">[МЛЕ-ко]</span></td>
+                            <td>Всегда мягкая</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Двузнаки -->
+            <div class="rule-section">
+                <h2><span class="emoji">🔗</span>Двузнаки (диграфы)</h2>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Двузнак</th>
+                            <th>Произношение</th>
+                            <th>Примеры</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>CH</strong></td><td>[х]</td><td>chata <span class="phonetic">[ХА-та]</span> — хата<br>chleb <span class="phonetic">[хлэб]</span> — хлеб</td></tr>
+                        <tr><td><strong>CZ</strong></td><td>твердое [ч]</td><td>czas <span class="phonetic">[час]</span> — время<br>rzecz <span class="phonetic">[жэч]</span> — вещь</td></tr>
+                        <tr><td><strong>SZ</strong></td><td>твердое [ш]</td><td>szafa <span class="phonetic">[ША-фа]</span> — шкаф<br>nasz <span class="phonetic">[наш]</span> — наш</td></tr>
+                        <tr><td><strong>DZ</strong></td><td>[дз]</td><td>dzwon <span class="phonetic">[дзвон]</span> — колокол<br>bardzo <span class="phonetic">[БАР-дзо]</span> — очень</td></tr>
+                        <tr><td><strong>DŹ</strong></td><td>мягкое [дж']</td><td>dźwig <span class="phonetic">[джьвиг]</span> — подъемный кран</td></tr>
+                        <tr><td><strong>DŻ</strong></td><td>твердое [дж]</td><td>dżem <span class="phonetic">[джэм]</span> — джем</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>Особый случай: диграф RZ</h3>
+                <div class="key-point">
+                    <strong>RZ имеет ДВА варианта произношения в зависимости от соседних звуков!</strong>
+                </div>
+
+                <table class="yot-table">
+                    <thead>
+                        <tr>
+                            <th>Позиция</th>
+                            <th>Произношение</th>
+                            <th>Примеры</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>В большинстве случаев</strong></td>
+                            <td>звонкое [ж]</td>
+                            <td>rzeka <span class="phonetic">[ЖЕ-ка]</span> — река<br>morze <span class="phonetic">[МО-же]</span> — море<br>rzadko <span class="phonetic">[ЖАД-ко]</span> — редко</td>
+                        </tr>
+                        <tr>
+                            <td><strong>После глухих согласных<br>P, T, K, CH, F, S</strong></td>
+                            <td>глухое [ш]</td>
+                            <td><strong>Запоминалка:</strong><br><em>Петя Тихо Кушал Фасоль Со Хлебом</em><br>(P-T-K-CH-F-S)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Примеры RZ после глухих согласных</h3>
+                <div class="examples-grid">
+                <div class="example-card">
+    <div class="consonant-header">После P [п]:</div>
+    <div class="word-example">przy <span class="phonetic">[пши]</span> — при, около</div>
+    <div class="word-example">przyjaciel <span class="phonetic">[пшиячель]</span> — друг</div>
+    <div class="word-example">przygoda <span class="phonetic">[пшигода]</span> — приключение</div>
+</div>
+
+<div class="example-card">
+    <div class="consonant-header">После T [т]:</div>
+    <div class="word-example">trzy <span class="phonetic">[тши]</span> — три</div>
+    <div class="word-example">trzeba <span class="phonetic">[тшеба]</span> — нужно</div>
+    <div class="word-example">trzydzieści <span class="phonetic">[тшидзещчи]</span> — тридцать</div>
+</div>
+
+<div class="example-card">
+    <div class="consonant-header">После K [к]:</div>
+    <div class="word-example">krzyk <span class="phonetic">[кшик]</span> — крик</div>
+    <div class="word-example">krzesło <span class="phonetic">[кшесло]</span> — стул</div>
+    <div class="word-example">krzyż <span class="phonetic">[кшиж]</span> — крест</div>
+</div>
+
+<div class="example-card">
+    <div class="consonant-header">После CH [х]:</div>
+    <div class="word-example">chrzan <span class="phonetic">[хшан]</span> — хрен</div>
+    <div class="word-example">chrzest <span class="phonetic">[хшест]</span> — крещение</div>
+</div>
+
+<div class="example-card">
+    <div class="consonant-header">После F [ф]:</div>
+    <div class="word-example">frze <span class="phonetic">[фше]</span> — форма глагола "тереть"</div>
+</div>
+
+<div class="example-card">
+    <div class="consonant-header">После S [с]:</div>
+    <div class="word-example">srze <span class="phonetic">[сше]</span> — диалектная форма</div>
+</div>
+
+        <!-- Практические советы -->
+        <div class="rule-section">
+            <h2><span class="emoji">💡</span>Практические советы</h2>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <strong>1.</strong> Всегда помните об ударении — предпоследний слог!
+                </div>
+                <div class="example-card">
+                    <strong>2.</strong> Внимательно следите за диакритическими знаками — они кардинально меняют произношение
+                </div>
+                <div class="example-card">
+                    <strong>3.</strong> Носовые буквы — ключевая особенность польского языка
+                </div>
+                <div class="example-card">
+                    <strong>4.</strong> Двузнаки читаются как один звук, но при сочетании нескольких — каждый отдельно
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body> </html>
